@@ -1,142 +1,61 @@
-# Kartik Jassal — Space Engineering Portfolio
+# Kartik Jassal - Space Engineering ePortfolio
 
-A personal portfolio website built with vanilla HTML, CSS, and JavaScript, and deployed with GitHub Pages. The site presents my work in space robotics, systems engineering, technical communication, and undergraduate research through a structured, aerospace-inspired interface.
+A responsive professional ePortfolio for COOP 2100 at York University's Lassonde School of Engineering. The site documents academic and professional growth through career evidence, goals, reflections, engineering artifacts, and explicit Lassonde Undergraduate Competency connections.
 
-## Live Site
+Live site: https://jazzhatcoder.github.io/
 
-**Website:** https://jazzhatcoder.github.io/
+## Rubric structure
 
-## Overview
+The home page follows the Summer 2026 ePortfolio manual:
 
-This portfolio was designed to do more than act as a simple online resume. It brings together:
+- A: About Me - biography, program, expected graduation, career direction, photo, and professional links
+- B: Career - education, experience, functional skills, and current resume
+- C: Goals and Portfolios - Dreams and Goals, Interests and Skills, Values and Personality, and Building Credentials
+- D: Reflections - Retell, Relate, Reflect framework plus linked artifact reflections
+- E: Course Projects - selected artifacts with explained Lassonde competency tags
 
-- a landing page that introduces my background and engineering interests
-- featured experience in research, mentorship, and robotics
-- education and scholarship highlights
-- curated showcase pieces from ENG2003
-- a research communication artifact from ASTRO Lab
-- a reflection page connecting communication growth with engineering practice
+Every visible placeholder is written as `[PLACEHOLDER: ...]` and styled in amber so missing information is easy to find without being mistaken for finished content.
 
-The visual language of the site is inspired by spacecraft telemetry, orbital overlays, and mission-interface aesthetics.
+## Information still needed
 
-## Features
+Search `index.html` for `[PLACEHOLDER:` and replace each item when supporting information is available. The remaining items request:
 
-- **Single-page portfolio homepage** with dedicated sections for About, Experience, Education, Achievements, Showcase, Reflection, and Connect
-- **Dedicated detail pages** inside `pages/` for showcase pieces, research experience, education, and reflection content
-- **Custom animated background** featuring a JavaScript-rendered starfield and orbital arc overlays
-- **Responsive navigation** with desktop navigation, mobile menu toggle, smooth anchor scrolling, and active-section highlighting
-- **Scroll-based interactions** including reveal animations and dynamic header behavior
-- **Portfolio-specific media assets** including a profile image, showcase thumbnails, and favicon package
-- **GitHub Pages friendly routing logic** that helps directory URLs resolve correctly
-- **Keyboard accessibility support** for interactive card-style elements
+- high school credential and graduation details
+- certificates, workshops, safety training, and dates
+- any additional paid, volunteer, COOP, internship, or community experience
+- verified EQ, values, personality, and learning-style assessment results
+- resume revision date and confirmation that all COOP experience is included
+- Week 3 SMART Goal wording and About Me assignment language
+- childhood aspirations and the personal reason for choosing Space Engineering
+- short-, medium-, and long-term career goals
+- an Emotional Intelligence artifact with reflection
+- a Sustainability and Ethics artifact with reflection
+- approved community accomplishments, commendations, or non-confidential work evidence
 
-## Tech Stack
+Do not add group work without permission from contributors or confidential employer information without written supervisor approval.
 
-- **HTML5**
-- **CSS3**
-- **Vanilla JavaScript**
-- **GitHub Pages** for hosting
+## Development
 
-No framework, bundler, or build pipeline is required.
+This is a static site built with HTML, CSS, and vanilla JavaScript. No build step is required. Open `index.html` directly or serve the repository with a local static server.
 
-## Project Structure
+Key files:
 
-```text
-.
-├── index.html
-├── css/
-│   └── main.css
-├── js/
-│   └── main.js
-├── assets/
-│   ├── favicon/
-│   └── images/
-│       ├── profile.jpg
-│       ├── showcase-1-thumb.jpg
-│       ├── showcase-2-thumb.jpg
-│       ├── showcase-3-thumb.jpg
-│       └── showcase-4-thumb.jpg
-└── pages/
-    ├── _detail-template.html
-    ├── achievement-1.html
-    ├── achievement-2.html
-    ├── achievement-3.html
-    ├── achievement-4.html
-    ├── edu-courses.html
-    ├── edu-degree.html
-    ├── exp-club.html
-    ├── exp-mentorship.html
-    ├── exp-research.html
-    ├── reflection.html
-    ├── showcase-1.html
-    ├── showcase-2.html
-    ├── showcase-3.html
-    ├── showcase-4.html
-    ├── showcase-5.html
-    └── showcase-6.html
-```
+- `index.html` - rubric-aligned home page and portfolio index
+- `css/main.css` - shared design system and responsive layouts
+- `js/main.js` - navigation, animation, accessibility behaviour, and consistent footer metadata
+- `pages/` - detailed experience, education, achievement, artifact, and reflection pages
+- `assets/images/` - profile and artifact imagery
 
-## Showcase Content
+## Quality checks
 
-The site currently highlights four main showcase artifacts:
-
-1. **Cover Letter** — an ENG2003 employer-facing application piece  
-2. **Group Presentation** — an ENG2003 presentation on hybrid energy storage systems  
-3. **Technical Report** — an ENG2003 systems-level report  
-4. **Research Poster** — an ASTRO Lab communication artifact on experimental light-curve analysis  
-
-These pieces are tied together by a reflection page focused on communication growth, audience awareness, and engineering clarity.
-
-## Local Development
-
-To run the site locally:
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/jazzhatcoder/jazzhatcoder.github.io.git
-   ```
-2. Open the project folder.
-3. Launch `index.html` in your browser.
-
-For the best experience, use a lightweight local server such as VS Code Live Server.
-
-## Deployment
-
-This site is configured for **GitHub Pages** deployment from the repository root.
-
-If you are using this project as a template for your own portfolio:
-
-1. Create a repository named `yourusername.github.io`
-2. Copy the project files into the repository root
-3. Push to the `main` branch
-4. Enable GitHub Pages if needed
-
-Your site will be available at:
-
-```text
-https://yourusername.github.io/
-```
-
-## Customization
-
-You can adapt this portfolio by editing:
-
-- `index.html` for homepage content and section structure
-- files in `pages/` for detailed writeups and showcase pages
-- `css/main.css` for colors, spacing, typography, and layout styling
-- `js/main.js` for animation, navigation, and interaction behavior
-- `assets/images/` for the portrait and showcase thumbnails
-
-## Why This Portfolio Exists
-
-This project was built to present engineering work as both technical and communicative practice. It reflects how I approach problems across research, design, and documentation, especially in space systems and robotics contexts.
+- Internal file and fragment links have been checked across all HTML pages.
+- `js/main.js` passes Node syntax validation.
+- The layout includes keyboard focus states, a skip link, semantic navigation, mobile navigation labels, responsive single-column fallbacks, and reduced-motion support.
 
 ## Author
 
-**Kartik Jassal**  
-Space Engineering Student, York University  
-Focused on space robotics, systems engineering, and technical communication
+Kartik Jassal
 
-## License
+Space Engineering, York University
 
-This project is presented as a personal portfolio. Please do not reuse written content, imagery, or branding without permission.
+kartikj@my.yorku.ca

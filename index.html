@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kartik Jassal - Space Engineering Portfolio</title>
-  <meta name="description" content="Portfolio of Kartik Jassal, Space Engineering student specializing in space robotics, on-orbit servicing, and advanced engineering systems." />
+  <title>Kartik Jassal | Space Engineering ePortfolio</title>
+  <meta name="description" content="The professional ePortfolio of Kartik Jassal, a Space Engineering student at York University, documenting education, experience, goals, engineering artifacts, and reflective growth." />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
   <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png" />
@@ -13,579 +13,341 @@
   <link rel="manifest" href="assets/favicon/site.webmanifest" />
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div id="orbital-overlay" aria-hidden="true"></div>
 
-<!-- ============================================================
-     BACKGROUND LAYERS
-     ============================================================ -->
-<canvas id="starfield" aria-hidden="true"></canvas>
-<div id="orbital-overlay" aria-hidden="true"></div>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
+    <a href="#contents">Contents</a>
+    <a href="#about">About Me</a>
+    <a href="#career">Career</a>
+    <a href="#goals">Goals &amp; Portfolios</a>
+    <a href="#reflections">Reflections</a>
+    <a href="#projects">Course Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-<!-- ============================================================
-     MOBILE NAV OVERLAY
-     ============================================================ -->
-<nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
-  <a href="#about">About</a>
-  <a href="#experience">Experience</a>
-  <a href="#education">Education</a>
-  <a href="#achievements">Achievements</a>
-  <a href="#showcase">Showcase</a>
-  <a href="#reflection">Reflection</a>
-  <a href="#connect">Connect</a>
-  
-  <a href="https://www.linkedin.com/in/kartikjassal/" target="_blank" rel="noopener" style="color:var(--cyan)">LinkedIn ↗</a>
-</nav>
+  <header id="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="header-initials" aria-label="Kartik Jassal ePortfolio home">KJ<span class="accent">.</span></a>
+      <nav class="header-nav" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#career">Career</a>
+        <a href="#goals">Goals</a>
+        <a href="#reflections">Reflections</a>
+        <a href="#projects">Projects</a>
+      </nav>
+      <a href="https://www.linkedin.com/in/kartikjassal/" target="_blank" rel="noopener" class="header-linkedin" aria-label="Kartik Jassal on LinkedIn">LinkedIn</a>
+      <button id="hamburger" class="hamburger" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
 
-<!-- ============================================================
-     HEADER
-     ============================================================ -->
-<header id="site-header" role="banner">
-  <div class="header-inner">
-   
-    <a href="index.html" class="header-initials" aria-label="Home">
-      KJ<span class="accent">.</span>
-    </a>
-
-    <nav class="header-nav" aria-label="Primary navigation">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-      <a href="#achievements">Achievements</a>
-      <a href="#showcase">Showcase</a>
-      <a href="#reflection">Reflection</a>
-      <a href="#connect">Connect</a>
-    </nav>
-
-    
-    <a href="https://www.linkedin.com/in/kartikjassal/" target="_blank" rel="noopener" class="header-linkedin" aria-label="LinkedIn profile">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-      LinkedIn
-    </a>
-
-    <button id="hamburger" class="hamburger" aria-label="Open navigation" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-
-<!-- ============================================================
-     HERO
-     ============================================================ -->
-<section id="hero" aria-label="Introduction">
-  <div class="container">
-    <div class="hero-grid">
-
-      <!-- LEFT: Text -->
-      <div class="hero-left">
-        <!-- PLACEHOLDER: Update system ID line -->
-        <div class="hero-system-id">
-          <span>SPC-ENG // PORTFOLIO</span>
-          <span class="id-amber">SYS.ACTIVE</span>
+  <main id="main-content">
+    <section id="hero" aria-labelledby="hero-name">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-left">
+            <div class="hero-system-id"><span>COOP 2100 // ePORTFOLIO</span><span class="id-amber">SUMMER 2026</span></div>
+            <h1 id="hero-name" class="hero-name">Kartik Jassal</h1>
+            <p class="hero-title"><span class="hl">Space Robotics &amp; Systems Engineering</span></p>
+            <p class="hero-intro">I am a Space Engineering student at York University developing expertise in robotics, technical communication, and systems thinking. This ePortfolio connects my coursework, research, leadership, and reflection to show how I am growing toward a career in space robotics and sustainable on-orbit systems.</p>
+            <div class="hero-ctas">
+              <a href="#contents" class="btn btn-primary">Explore Portfolio</a>
+              <a href="https://drive.google.com/file/d/17bOKMBIG_i7pZanthaqwrjrVUTMx58RQ/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-outline">View Resume</a>
+              <a href="mailto:kartikj@my.yorku.ca" class="btn btn-ghost">Email Me</a>
+            </div>
+          </div>
+          <div class="hero-image-wrap">
+            <div class="orbital-ring orbital-1" aria-hidden="true"></div>
+            <div class="orbital-ring orbital-2" aria-hidden="true"></div>
+            <div class="hero-image-frame">
+              <div class="hud-bracket tl" aria-hidden="true"></div><div class="hud-bracket tr" aria-hidden="true"></div>
+              <div class="hud-bracket bl" aria-hidden="true"></div><div class="hud-bracket br" aria-hidden="true"></div>
+              <img src="assets/images/profile.jpg" alt="Portrait of Kartik Jassal" />
+            </div>
+            <div class="hero-status" aria-hidden="true">
+              <div class="hero-status-row"><span class="status-dot"></span><span>B.Eng. Space Engineering</span></div>
+              <div class="hero-status-row"><span class="status-dot amber"></span><span>Expected 2029</span></div>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <!-- PLACEHOLDER: Replace {{FULL_NAME}} e.g. "Alex Kim" -->
-        <h1 class="hero-name">Kartik Jassal</h1>
+    <div class="section-divider" aria-hidden="true"></div>
 
-        <!-- PLACEHOLDER: Replace {{TITLE_OR_HEADLINE}} e.g. "Space Robotics ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â· On-Orbit Systems" -->
-        <p class="hero-title"><span class="hl">Space Robotics and Systems Engineering</span></p>
+    <section id="contents" aria-labelledby="contents-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-eyebrow"><span class="section-index">00 /</span><span class="section-label">Portfolio Index</span></div>
+          <h2 id="contents-title" class="section-title">Start Here</h2>
+        </div>
+        <p class="section-intro reveal">This index follows the COOP 2100 ePortfolio structure. Choose a section to learn who I am, review my career record, examine my goals, read my reflections, or explore evidence of my engineering development.</p>
+        <nav class="toc-grid" aria-label="ePortfolio table of contents">
+          <a class="toc-card reveal" href="#about"><span class="toc-number">A</span><span><strong>About Me</strong><small>Biography, program, interests, and career direction</small></span></a>
+          <a class="toc-card reveal" href="#career"><span class="toc-number">B</span><span><strong>Career</strong><small>Education, experience, skills, and resume</small></span></a>
+          <a class="toc-card reveal" href="#goals"><span class="toc-number">C</span><span><strong>Goals &amp; Portfolios</strong><small>Self-discovery, development goals, values, and credentials</small></span></a>
+          <a class="toc-card reveal" href="#reflections"><span class="toc-number">D</span><span><strong>Reflections</strong><small>Retell, relate, and reflect on professional growth</small></span></a>
+          <a class="toc-card reveal" href="#projects"><span class="toc-number">E</span><span><strong>Course Projects</strong><small>Artifacts tagged with Lassonde competencies</small></span></a>
+        </nav>
+      </div>
+    </section>
 
-        <!-- PLACEHOLDER: Replace {{SHORT_INTRO}} with 2-3 sentences -->
-        <p class="hero-intro">I am a Space Engineering student building a portfolio around robotics, technical communication, and systems thinking. This site brings together coursework, research, and reflection to show how I approach engineering problems and how I communicate them to different audiences.</p>
+    <div class="section-divider" aria-hidden="true"></div>
 
-        <div class="hero-ctas">
-          <!-- PLACEHOLDER: Replace {{LINKEDIN_URL}} -->
-          <a href="https://www.linkedin.com/in/kartikjassal/" target="_blank" rel="noopener" class="btn btn-primary">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-            LinkedIn
+    <section id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-eyebrow"><span class="section-index">A /</span><span class="section-label">Who I Am</span></div>
+          <h2 id="about-title" class="section-title">About Me</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>I am pursuing a Specialized Honours Bachelor of Engineering in Space Engineering at York University, with an expected graduation date of April 2029. My work sits at the intersection of robotics, systems engineering, and human spaceflight.</p>
+            <p>I am especially interested in how on-orbit servicing can make space operations more sustainable, resilient, and scalable. Through research, prototyping, and student leadership, I am building the technical judgement and communication skills needed to contribute to multidisciplinary space missions.</p>
+            <p>Outside engineering, I enjoy rock climbing and logic puzzles. Both reinforce the patience, deliberate practice, and problem-solving mindset I bring to technical work.</p>
+            <div class="about-traits" aria-label="Technical interests and skills">
+              <span class="trait-tag">Space Robotics</span><span class="trait-tag">On-Orbit Servicing</span>
+              <span class="trait-tag">Systems Engineering</span><span class="trait-tag">Mission Design</span>
+              <span class="trait-tag">Python / MATLAB</span><span class="trait-tag">CAD / SolidWorks</span>
+              <span class="trait-tag">Technical Writing</span><span class="trait-tag">Team Leadership</span>
+            </div>
+            <div class="inline-actions">
+              <a class="btn btn-outline" href="https://www.linkedin.com/in/kartikjassal/" target="_blank" rel="noopener">LinkedIn Profile</a>
+              <a class="btn btn-ghost" href="https://github.com/kartikjassal" target="_blank" rel="noopener">GitHub Projects</a>
+            </div>
+          </div>
+          <aside class="about-sidebar" aria-label="About Me summary">
+            <div class="about-stat reveal"><div class="stat-num">2029</div><div class="stat-label">Expected Graduation</div></div>
+            <div class="about-stat reveal"><div class="stat-num">B.Eng.</div><div class="stat-label">Space Engineering</div></div>
+            <div class="about-stat reveal"><div class="stat-num">York</div><div class="stat-label">Lassonde School of Engineering</div></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <section id="career" aria-labelledby="career-title">
+      <div class="container">
+        <span id="education" class="anchor-alias" aria-hidden="true"></span>
+        <span id="experience" class="anchor-alias" aria-hidden="true"></span>
+        <div class="section-header reveal">
+          <div class="section-eyebrow"><span class="section-index">B /</span><span class="section-label">Permanent Career Record</span></div>
+          <h2 id="career-title" class="section-title">Career</h2>
+        </div>
+        <p class="section-intro reveal">My career record brings together formal education, research, employment, co-curricular leadership, functional skills, and a current employer-ready resume.</p>
+
+        <h3 class="subsection-title reveal">Education</h3>
+        <div class="edu-grid">
+          <a class="card reveal" href="pages/edu-degree.html">
+            <div class="card-meta">September 2024 - April 2029 (expected)</div>
+            <div class="card-title">B.Eng., Specialized Honours Space Engineering</div>
+            <div class="card-desc">Lassonde School of Engineering, York University. Explore the degree, academic focus, and development to date.</div>
           </a>
-          <!-- PLACEHOLDER: Replace {{GITHUB_URL}} -->
-          <a href="https://github.com/jazzhatcoder" target="_blank" rel="noopener" class="btn btn-outline">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-            GitHub
+          <a class="card reveal" href="pages/edu-courses.html">
+            <div class="card-meta">Current program</div>
+            <div class="card-title">Relevant Courses &amp; Training</div>
+            <div class="card-desc">Space Systems Engineering, Dynamics, Electricity and Magnetism, Differential Equations, and other completed coursework.</div>
           </a>
-          <!-- PLACEHOLDER: Replace {{RESUME_URL}} -->
-          <a href="https://drive.google.com/file/d/17bOKMBIG_i7pZanthaqwrjrVUTMx58RQ/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-outline">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-            Resume
+          <div class="card placeholder-card reveal">
+            <div class="placeholder-label">Information needed</div>
+            <div class="card-title">High School Diploma</div>
+            <div class="card-desc">[PLACEHOLDER: Add school name, diploma or credential, location, and graduation year.]</div>
+          </div>
+          <div class="card placeholder-card reveal">
+            <div class="placeholder-label">Information needed</div>
+            <div class="card-title">Certificates, Workshops &amp; Safety Training</div>
+            <div class="card-desc">[PLACEHOLDER: Add relevant certifications, technical workshops, lab training, and completion dates.]</div>
+          </div>
+        </div>
+
+        <h3 class="subsection-title reveal">Experience</h3>
+        <div class="exp-timeline">
+          <a class="exp-item reveal" href="pages/exp-research.html">
+            <div class="exp-date">May 2025 - Present</div><div class="exp-role">Undergraduate Researcher</div>
+            <div class="exp-org">Astronautics and Robotics Laboratory (ASTRO Lab)</div>
+            <div class="exp-desc">Developing a hardware-in-the-loop platform that emulates light-curve analysis for determining the rotation of asteroids and space debris. This work combines simulation, actuation, optical sensing, investigation, and technical documentation.</div>
           </a>
-          <a href="#connect" class="btn btn-ghost">Contact</a>
-        </div>
-      </div>
-
-      <!-- RIGHT: Image + decorations -->
-      <div class="hero-image-wrap">
-        <!-- Orbital rings around image -->
-        <div class="orbital-ring orbital-1" aria-hidden="true"></div>
-        <div class="orbital-ring orbital-2" aria-hidden="true"></div>
-
-        <div class="hero-image-frame">
-          <!-- HUD corner brackets -->
-          <div class="hud-bracket tl" aria-hidden="true"></div>
-          <div class="hud-bracket tr" aria-hidden="true"></div>
-          <div class="hud-bracket bl" aria-hidden="true"></div>
-          <div class="hud-bracket br" aria-hidden="true"></div>
-
-          <img src="assets/images/profile.jpg" alt="Portrait of Kartik Jassal" />
-        </div>
-
-        <!-- Telemetry ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â decorative vertical readout (cosmetic) -->
-        <div class="hero-telemetry" aria-hidden="true">
-          <div class="hero-telem-item">ORBIT<span class="val">LEO</span></div>
-          <div class="hero-telem-item">ALT<span class="val">401 km</span></div>
-          <div class="hero-telem-item">INC<span class="val">5.7°</span></div>
-        </div>
-
-        <!-- Status badge -->
-        <div class="hero-status" aria-hidden="true">
-          <div class="hero-status-row">
-            <span class="status-dot"></span>
-            <span>Systems Active</span>
+          <a class="exp-item reveal" href="pages/exp-mentorship.html">
+            <div class="exp-date">May 2025 - September 2025</div><div class="exp-role">Prototyping Lab Mentor</div>
+            <div class="exp-org">Lassonde School of Engineering, York University</div>
+            <div class="exp-desc">Guided students in 3D modelling, 3D printing, safe tool use, and troubleshooting as they moved projects from concept to physical prototype.</div>
+          </a>
+          <a class="exp-item reveal" href="pages/exp-club.html">
+            <div class="exp-date">November 2024 - Present</div><div class="exp-role">Systems Lead</div>
+            <div class="exp-org">York University Robotics Society</div>
+            <div class="exp-desc">Contributing to hands-on robotics projects through systems thinking, design, multidisciplinary teamwork, and iterative problem-solving.</div>
+          </a>
+          <div class="exp-item placeholder-card reveal">
+            <div class="placeholder-label">Information needed</div><div class="exp-role">Additional Paid or Volunteer Experience</div>
+            <div class="exp-desc">[PLACEHOLDER: Add any other employment, volunteer, COOP, internship, or community role. Include dates, responsibilities, skills used, and at least one measurable accomplishment.]</div>
           </div>
-          <div class="hero-status-row">
-            <span class="status-dot amber"></span>
-            <!-- PLACEHOLDER: Update with expected graduation, e.g. "Grad. 2026" -->
-            <span>Grad. 2029</span>
+        </div>
+
+        <div class="career-summary-grid">
+          <div class="career-summary reveal">
+            <div class="section-eyebrow"><span class="section-label">Functional Skills</span></div>
+            <ul class="clean-list">
+              <li><strong>Engineering:</strong> systems thinking, prototyping, mission design, experimental investigation</li>
+              <li><strong>Tools:</strong> Python, MATLAB, CAD, SolidWorks, 3D printing</li>
+              <li><strong>Professional:</strong> technical writing, presentations, mentoring, teamwork, research documentation</li>
+              <li class="placeholder-line">[PLACEHOLDER: Add verified EQ, values, personality, and learning-style assessment results.]</li>
+            </ul>
+          </div>
+          <div class="career-summary reveal">
+            <div class="section-eyebrow"><span class="section-label">Resume</span></div>
+            <p>This resume is the current professional record linked from this ePortfolio. Confirm that it includes all current experience and is ready to send to an employer.</p>
+            <a class="btn btn-primary" href="https://drive.google.com/file/d/17bOKMBIG_i7pZanthaqwrjrVUTMx58RQ/view?usp=drive_link" target="_blank" rel="noopener">Open Current Resume</a>
+            <p class="placeholder-note">[PLACEHOLDER: Add the resume's last revision date and confirm that all COOP experience is included.]</p>
           </div>
         </div>
       </div>
+    </section>
 
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <section id="goals" aria-labelledby="goals-title">
+      <div class="container">
+        <span id="achievements" class="anchor-alias" aria-hidden="true"></span>
+        <div class="section-header reveal">
+          <div class="section-eyebrow"><span class="section-index">C /</span><span class="section-label">Discover Myself</span></div>
+          <h2 id="goals-title" class="section-title">Goals &amp; Portfolios</h2>
+        </div>
+        <div class="goal-banner reveal">
+          <span class="goal-kicker">Broader Career Goal</span>
+          <p>Develop the technical depth, systems perspective, and communication ability needed to contribute to space robotics and sustainable on-orbit servicing missions.</p>
+          <p class="placeholder-note">[PLACEHOLDER: Refine this statement using your Week 3 SMART Goals and About Me assignment.]</p>
+        </div>
+        <div class="portfolio-grid">
+          <article class="portfolio-card reveal">
+            <span class="portfolio-index">01</span><h3>Dreams &amp; Goals</h3>
+            <p>This portfolio traces why I chose Space Engineering and how my interests in robotics, systems, and sustainable space operations are becoming a professional direction.</p>
+            <ul class="clean-list"><li>[PLACEHOLDER: Add childhood aspirations or an early formative experience.]</li><li>[PLACEHOLDER: Explain why you chose this major in your own words.]</li><li>[PLACEHOLDER: Add short-, medium-, and long-term career goals.]</li></ul>
+          </article>
+          <article class="portfolio-card reveal">
+            <span class="portfolio-index">02</span><h3>Interests &amp; Skills</h3>
+            <p>This portfolio documents the interests and technical skills that guide my development, then turns assessment results into specific action.</p>
+            <ul class="clean-list"><li>Current interests: space robotics, on-orbit servicing, systems engineering, and mission design.</li><li>Current tools: Python, MATLAB, CAD, SolidWorks, and rapid prototyping.</li><li>[PLACEHOLDER: Add interest/skills assessment results and at least one complete SMART development goal.]</li></ul>
+          </article>
+          <article class="portfolio-card reveal">
+            <span class="portfolio-index">03</span><h3>Values &amp; Personality</h3>
+            <p>This portfolio will connect self-assessment results to how I communicate, collaborate, make ethical decisions, and learn in a workplace.</p>
+            <ul class="clean-list"><li>[PLACEHOLDER: Add top values and explain how they affect engineering decisions.]</li><li>[PLACEHOLDER: Add EQ results with a Retell-Relate-Reflect response.]</li><li>[PLACEHOLDER: Add learning-style results and explain how you will apply them at work.]</li></ul>
+          </article>
+          <article class="portfolio-card reveal">
+            <span class="portfolio-index">04</span><h3>Building Credentials</h3>
+            <p>This portfolio gathers evidence that I am translating goals into academic, technical, and community progress.</p>
+            <ul class="credential-links">
+              <li><a href="pages/achievement-1.html">Enbridge Engineering Scholarship</a></li>
+              <li><a href="pages/achievement-2.html">Ontario Professional Engineers Foundation Scholarship</a></li>
+              <li><a href="pages/achievement-3.html">York University Entrance Scholarship</a></li>
+              <li><a href="pages/achievement-4.html">BEST Entrance Award</a></li>
+            </ul>
+            <p class="placeholder-note">[PLACEHOLDER: Add community accomplishments, commendations, and approved work-placement evidence.]</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <section id="reflections" aria-labelledby="reflections-title">
+      <div class="container">
+        <span id="reflection" class="anchor-alias" aria-hidden="true"></span>
+        <div class="section-header reveal">
+          <div class="section-eyebrow"><span class="section-index">D /</span><span class="section-label">Growth &amp; Self-Assessment</span></div>
+          <h2 id="reflections-title" class="section-title">Reflections</h2>
+        </div>
+        <p class="section-intro reveal">Each artifact reflection moves beyond description by using the same three-part framework: what happened, how the experience connects to course or professional learning, and how it changed my thinking or future action.</p>
+        <div class="reflection-framework">
+          <div class="framework-step reveal"><span>01</span><h3>Retell</h3><p>What did I create, do, or experience? What was the context?</p></div>
+          <div class="framework-step reveal"><span>02</span><h3>Relate</h3><p>How does it connect to COOP 2100, my goals, and engineering competencies?</p></div>
+          <div class="framework-step reveal"><span>03</span><h3>Reflect</h3><p>What did I learn about myself, what changed, and what will I do differently?</p></div>
+        </div>
+        <div class="reflection-preview reveal">
+          <div class="reflection-label">Communication Growth</div>
+          <p class="reflection-quote">“ENG2003 showed me that technical communication is not separate from engineering work. It is the discipline that makes analysis usable, decisions defensible, and collaboration possible.”</p>
+          <a href="pages/reflection.html" class="btn btn-outline">Read Full Communication Reflection</a>
+        </div>
+        <div class="required-reflections">
+          <article class="career-summary placeholder-card reveal"><div class="placeholder-label">Required course artifact</div><h3>Emotional Intelligence Reflection</h3><p>[PLACEHOLDER: Add your EQ assessment result. Retell the assessment, relate it to teamwork or workplace behaviour, then reflect on one specific change you will make.]</p></article>
+          <article class="career-summary placeholder-card reveal"><div class="placeholder-label">Required course artifact</div><h3>Sustainability &amp; Ethics Discussion</h3><p>[PLACEHOLDER: Add your sustainability/ethics artifact. Explain the complex issue, connect it to Ethics and Equity or Impact on Society and the Environment, and show how your perspective changed.]</p></article>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <section id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <span id="showcase" class="anchor-alias" aria-hidden="true"></span>
+        <div class="section-header reveal">
+          <div class="section-eyebrow"><span class="section-index">E /</span><span class="section-label">Evidence of Learning</span></div>
+          <h2 id="projects-title" class="section-title">Course Projects &amp; Artifacts</h2>
+        </div>
+        <p class="section-intro reveal">These purposefully selected artifacts demonstrate how classroom learning transfers into research and professional communication. Each is tagged with Lassonde Undergraduate Competencies, and each competency connection is explained rather than simply listed.</p>
+        <div class="artifact-grid">
+          <article class="artifact-card reveal">
+            <img src="assets/images/showcase-1-thumb.jpg" alt="Preview of an aerospace cover letter" />
+            <div class="artifact-content"><span class="artifact-source">ENG 2003</span><h3>Targeted Aerospace Cover Letter</h3><p>A concise employer-facing artifact that translates research, documentation, and teamwork experience into evidence relevant to a specific audience.</p>
+              <div class="competencies"><span>Communication Skills</span><span>Professionalism</span></div>
+              <p class="competency-rationale"><strong>Why these competencies:</strong> The letter requires clear audience analysis, accurate representation of experience, professional tone, and an ethical claim-evidence relationship.</p>
+              <a class="text-link" href="pages/showcase-1.html">View artifact and reflection <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="artifact-card reveal">
+            <img src="assets/images/showcase-2-thumb.jpg" alt="Preview of a collaborative presentation" />
+            <div class="artifact-content"><span class="artifact-source">ENG 2003</span><h3>Hybrid Energy Storage Group Presentation</h3><p>A collaborative technical presentation organized for audience comprehension through visual hierarchy, evidence selection, and coordinated oral delivery.</p>
+              <div class="competencies"><span>Individual &amp; Teamwork</span><span>Communication Skills</span></div>
+              <p class="competency-rationale"><strong>Why these competencies:</strong> The artifact depends on shared planning and consistent team delivery while translating technical material into a form an audience can follow and evaluate.</p>
+              <a class="text-link" href="pages/showcase-2.html">View artifact and reflection <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="artifact-card reveal">
+            <img src="assets/images/showcase-3-thumb.jpg" alt="Preview of a space-based solar power technical report" />
+            <div class="artifact-content"><span class="artifact-source">ENG 2003</span><h3>Space-Based Solar Power Technical Report</h3><p>A systems-level report that evaluates feasibility through technical evidence, competing constraints, and a structured engineering argument.</p>
+              <div class="competencies"><span>Problem Analysis</span><span>Communication Skills</span><span>Impact on Society &amp; Environment</span></div>
+              <p class="competency-rationale"><strong>Why these competencies:</strong> The report decomposes a complex feasibility question, communicates evidence logically, and considers how an energy system could affect society and environmental decision-making.</p>
+              <a class="text-link" href="pages/showcase-3.html">View artifact and reflection <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="artifact-card reveal">
+            <img src="assets/images/showcase-4-thumb.jpg" alt="Preview of an ASTRO Lab research poster" />
+            <div class="artifact-content"><span class="artifact-source">ASTRO Lab Research</span><h3>Light-Curve Hardware-in-the-Loop Research Poster</h3><p>A visual research artifact that condenses the motivation, experimental platform, method, and significance of a technical investigation for a mixed audience.</p>
+              <div class="competencies"><span>Investigation</span><span>Use of Engineering Tools</span><span>Communication Skills</span></div>
+              <p class="competency-rationale"><strong>Why these competencies:</strong> The work centres on experimental inquiry and an instrumented test platform, while the poster turns that process into a clear, inspectable technical narrative.</p>
+              <a class="text-link" href="pages/showcase-4.html">View artifact and reflection <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+        </div>
+        <div class="confidentiality-note reveal"><strong>Confidentiality:</strong> No confidential or proprietary COOP information should be published here. Any future employer artifact will be included only with written supervisor approval and with sensitive client, product, and system details removed.</div>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <span id="connect" class="anchor-alias" aria-hidden="true"></span>
+        <div class="section-header reveal"><div class="section-eyebrow"><span class="section-index">//</span><span class="section-label">Professional Links</span></div><h2 id="contact-title" class="section-title">Connect</h2></div>
+        <div class="links-grid">
+          <a href="mailto:kartikj@my.yorku.ca" class="link-card reveal"><div><div class="link-card-label">Email</div><div class="link-card-sub">kartikj@my.yorku.ca</div></div></a>
+          <a href="https://www.linkedin.com/in/kartikjassal/" target="_blank" rel="noopener" class="link-card reveal"><div><div class="link-card-label">LinkedIn</div><div class="link-card-sub">Professional profile</div></div></a>
+          <a href="https://github.com/kartikjassal" target="_blank" rel="noopener" class="link-card reveal"><div><div class="link-card-label">GitHub</div><div class="link-card-sub">Code and technical projects</div></div></a>
+          <a href="https://drive.google.com/file/d/17bOKMBIG_i7pZanthaqwrjrVUTMx58RQ/view?usp=drive_link" target="_blank" rel="noopener" class="link-card reveal"><div><div class="link-card-label">Resume</div><div class="link-card-sub">Current professional resume</div></div></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-logo">KJ<span>.</span></div>
+      <nav class="footer-links" aria-label="Footer navigation"><a href="index.html">Home</a><a href="#about">About</a><a href="#career">Career</a><a href="#goals">Goals</a><a href="#reflections">Reflections</a><a href="#projects">Projects</a><a href="mailto:kartikj@my.yorku.ca">Email</a></nav>
+      <p class="footer-copy">© 2026 Kartik Jassal · kartikj@my.yorku.ca · Last updated: July 13, 2026</p>
     </div>
-  </div>
-</section>
-
-<div class="section-divider" aria-hidden="true"></div>
-
-<!-- ============================================================
-     ABOUT
-     ============================================================ -->
-<section id="about">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-eyebrow">
-        <span class="section-index">01 /</span>
-        <span class="section-label">Who I Am</span>
-      </div>
-      <h2 class="section-title">About</h2>
-    </div>
-
-    <div class="about-grid">
-      <div class="about-text reveal">
-        <p>My work sits at the intersection of robotics, systems engineering, and human spaceflight, with a particular interest in how on-orbit servicing can make future space operations more sustainable, resilient, and scalable.</p>
-        <p>Beyond coursework, I enjoy research, prototyping, and translating technical ideas into clear narratives for classmates, mentors, and future employers. Outside engineering, I recharge through rock climbing and logic puzzles, both of which reinforce the patience and problem-solving mindset I bring into technical work.</p>
-
-        <div class="about-traits">
-          <span class="trait-tag">Space Robotics</span>
-          <span class="trait-tag">On-Orbit Servicing</span>
-          <span class="trait-tag">Systems Engineering</span>
-          <span class="trait-tag">GN&amp;C</span>
-          <span class="trait-tag">Technical Writing</span>
-          <span class="trait-tag">Mission Design</span>
-          <span class="trait-tag">Python / MATLAB</span>
-          <span class="trait-tag">CAD / SolidWorks</span>
-        </div>
-      </div>
-
-      <div class="about-sidebar">
-        <!-- PLACEHOLDER: Update stats with real numbers -->
-        <div class="about-stat reveal">
-          <div class="stat-num">2029</div>
-          <div class="stat-label">Expected Graduation</div>
-        </div>
-        <div class="about-stat reveal">
-          <div class="stat-num">4</div>
-          <div class="stat-label">Showcase Pieces</div>
-        </div>
-        <div class="about-stat reveal">
-          <div class="stat-num">3</div>
-          <div class="stat-label">ENG2003 Pieces</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="section-divider" aria-hidden="true"></div>
-
-<!-- ============================================================
-     EXPERIENCE
-     ============================================================ -->
-<section id="experience">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-eyebrow">
-        <span class="section-index">02 /</span>
-        <span class="section-label">Work &amp; Research</span>
-      </div>
-      <h2 class="section-title">Experience</h2>
-    </div>
-
-    <div class="exp-timeline">
-
-      <!--
-        PLACEHOLDER: Replace each exp-item with your real experience.
-        Update onclick href to matching detail page.
-      -->
-      <div class="exp-item reveal" onclick="window.location='pages/exp-research.html'" role="button" tabindex="0" aria-label="View research experience details">
-        <div class="exp-date">May 2025 - Present</div>
-        <div class="exp-role">Undergraduate Researcher</div>
-        <div class="exp-org">Astronautics and Robotics Laboratory (ASTRO Lab)</div>
-        <div class="exp-desc">My research focuses on developing a hardware-in-the-loop experimental platform to emulate light curve analysis for determining the rotation of asteroids and space debris. By combining simulation, actuation, and optical sensing, I investigate how laboratory-based systems can replicate and validate space-based observation methods.</div>
-      </div>
-
-      <div class="exp-item reveal" onclick="window.location='pages/exp-mentorship.html'" role="button" tabindex="0" aria-label="View details">
-        <div class="exp-date">May 2025 - Sept 2025</div>
-        <div class="exp-role">Prototyping Lab Mentor</div>
-        <div class="exp-org">Lassonde School of Engineering, York University</div>
-        <div class="exp-desc">As a Prototyping Lab Mentor, I support students in turning ideas into physical projects by guiding them in 3D modeling, 3D printing, and safe use of prototyping tools. This role has strengthened my ability to troubleshoot technical challenges, communicate clearly, and help others bring designs from concept to creation.</div>
-      </div>
-
-      <div class="exp-item reveal" onclick="window.location='pages/exp-club.html'" role="button" tabindex="0" aria-label="View extracurricular details">
-        <div class="exp-date">Nov 2024 - Present</div>
-        <div class="exp-role">Systems Lead, York University Robotics Society</div>
-        <div class="exp-org">Lassonde School of Engineering, York University</div>
-        <div class="exp-desc">As a member of the York University Robotics Society, I contribute to hands-on robotics projects that strengthen my skills in design, problem-solving, and multidisciplinary teamwork. Through this role, I continue to grow my experience in building and refining robotic systems while collaborating with others in a fast-paced technical environment.</div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div class="section-divider" aria-hidden="true"></div>
-
-<!-- ============================================================
-     EDUCATION
-     ============================================================ -->
-<section id="education">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-eyebrow">
-        <span class="section-index">03 /</span>
-        <span class="section-label">Academic Background</span>
-      </div>
-      <h2 class="section-title">Education</h2>
-    </div>
-
-    <div class="edu-grid">
-
-      <div class="card reveal" onclick="window.location='pages/edu-degree.html'" role="button" tabindex="0" aria-label="View degree details">
-        <div class="card-top">
-          <div class="card-icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-          </div>
-          <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-        </div>
-        <div class="card-meta">Sept 2024 - Apr 2029</div>
-        <div class="card-title">B.Eng., Spec. Hons. Space Engineering</div>
-        <div class="card-desc">Lassonde School of Engineering, York University</div>
-      </div>
-
-      <div class="card reveal" onclick="window.location='pages/edu-courses.html'" role="button" tabindex="0" aria-label="View relevant coursework">
-        <div class="card-top">
-          <div class="card-icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-          </div>
-          <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-        </div>
-        <div class="card-meta">Relevant Coursework</div>
-        <div class="card-title">Core Engineering Studies</div>
-        <div class="card-desc">Key coursework includes Space Systems Engineering (ESSE 2361), which introduces spacecraft design from concept to launch, alongside core technical subjects like Dynamics, Electricity and Magnetism, and Differential Equations.</div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div class="section-divider" aria-hidden="true"></div>
-
-<!-- ============================================================
-     KEY ACHIEVEMENTS
-     ============================================================ -->
-<section id="achievements">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-eyebrow">
-        <span class="section-index">04 /</span>
-        <span class="section-label">Milestones</span>
-      </div>
-      <h2 class="section-title">Key Achievements</h2>
-    </div>
-
-    <div class="achievements-grid">
-
-      <!-- PLACEHOLDER: Update emoji, title, desc, and detail page links -->
-      <div class="achievement-card reveal" onclick="window.location='pages/achievement-1.html'" role="button" tabindex="0">
-        <div class="achievement-icon"></div>
-        <div>
-          <div class="achievement-title">Ontario Professional Engineers Foundation for Education Undergraduate Scholarship</div>
-          <div class="achievement-desc">Received for academic excellence and commitment to engineering education.</div>
-        </div>
-      </div>
-
-      <div class="achievement-card reveal" onclick="window.location='pages/achievement-2.html'" role="button" tabindex="0">
-        <div class="achievement-icon"></div>
-        <div>
-          <div class="achievement-title">Enbridge Engineering Scholarship</div>
-          <div class="achievement-desc">Received for outstanding academic performance and leadership in engineering studies.</div>
-        </div>
-      </div>
-
-      <div class="achievement-card reveal" onclick="window.location='pages/achievement-3.html'" role="button" tabindex="0">
-        <div class="achievement-icon"></div>
-        <div>
-          <div class="achievement-title">York University Entrance Scholarship</div>
-          <div class="achievement-desc">Received for exceptional academic performance in high school.</div>
-        </div>
-      </div>
-
-      <div class="achievement-card reveal" onclick="window.location='pages/achievement-4.html'" role="button" tabindex="0">
-        <div class="achievement-icon"></div>
-        <div>
-          <div class="achievement-title">BEST (Bergeron Entreprenuers in Science and Technology) Undergraduate Entrance Award</div>
-          <div class="achievement-desc">Received for exceptional academic performance and leadership in engineering studies.</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div class="section-divider" aria-hidden="true"></div>
-
-<!-- ============================================================
-     SHOWCASE / PROJECTS
-     ============================================================ -->
-<section id="showcase">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-eyebrow">
-        <span class="section-index">05 /</span>
-        <span class="section-label">ENG2003 + Communication Work</span>
-      </div>
-      <h2 class="section-title">Showcase</h2>
-    </div>
-    <p class="section-intro reveal">This portfolio matches the assignment brief directly: three showcase pieces from ENG2003, one additional communication artifact from undergraduate research, and a reflection page that explains how the pieces connect.</p>
-
-    <div class="showcase-grid">
-
-      <!-- SHOWCASE 1 ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ENG2003 -->
-      <div class="showcase-card reveal" onclick="window.location='pages/showcase-1.html'" role="button" tabindex="0" aria-label="View Showcase 1">
-        <div class="showcase-thumb">
-          <div class="thumb-grid" aria-hidden="true"></div>
-          <div class="thumb-crosshair" aria-hidden="true"></div>
-          <div class="showcase-thumb-placeholder">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" opacity="0.35"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-             <img src="assets/images/showcase-1-thumb.jpg" alt="Showcase 1 thumbnail" />
-          </div>
-        </div>
-        <div class="showcase-body">
-          <div class="showcase-category">ENG2003 · Showcase 01</div>
-          <!-- PLACEHOLDER: Replace {{SHOWCASE_1}} -->
-          <div class="showcase-title">Cover Letter</div>
-          <div class="showcase-desc">A targeted aerospace cover letter that frames research, documentation, and teamwork experience for an employer-facing audience.</div>
-          <div class="showcase-footer">
-            <span class="showcase-tag">Technical Writing</span>
-            <svg class="showcase-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- SHOWCASE 2 ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ENG2003 -->
-      <div class="showcase-card reveal" onclick="window.location='pages/showcase-2.html'" role="button" tabindex="0" aria-label="View Showcase 2">
-        <div class="showcase-thumb">
-          <div class="thumb-grid" aria-hidden="true"></div>
-          <div class="thumb-crosshair" aria-hidden="true"></div>
-          <div class="showcase-thumb-placeholder">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" opacity="0.35"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-            <img src="assets/images/showcase-2-thumb.jpg" alt="Showcase 2 thumbnail" />
-          </div>
-        </div>
-        <div class="showcase-body">
-          <div class="showcase-category">ENG2003 · Showcase 02</div>
-          <!-- PLACEHOLDER: Replace {{SHOWCASE_2}} -->
-          <div class="showcase-title">Group Presentation</div>
-          <div class="showcase-desc">A collaborative presentation on hybrid energy storage systems that demonstrates audience awareness, visual structure, and oral delivery.</div>
-          <div class="showcase-footer">
-            <span class="showcase-tag">Oral Presentation</span>
-            <svg class="showcase-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- SHOWCASE 3 ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ENG2003 -->
-      <div class="showcase-card reveal" onclick="window.location='pages/showcase-3.html'" role="button" tabindex="0" aria-label="View Showcase 3">
-        <div class="showcase-thumb">
-          <div class="thumb-grid" aria-hidden="true"></div>
-          <div class="thumb-crosshair" aria-hidden="true"></div>
-          <div class="showcase-thumb-placeholder">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" opacity="0.35"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
-            <img src="assets/images/showcase-3-thumb.jpg" alt="Showcase 3 thumbnail" />
-          </div>
-        </div>
-        <div class="showcase-body">
-          <div class="showcase-category">ENG2003 · Showcase 03</div>
-          <!-- PLACEHOLDER: Replace {{SHOWCASE_3}} -->
-          <div class="showcase-title">Technical Report</div>
-          <div class="showcase-desc">A systems-level report evaluating space-based solar power through technical evidence, feasibility analysis, and structured argumentation.</div>
-          <div class="showcase-footer">
-            <span class="showcase-tag">Report</span>
-            <svg class="showcase-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- SHOWCASE 4 ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â Other course / activity -->
-      <div class="showcase-card reveal" onclick="window.location='pages/showcase-4.html'" role="button" tabindex="0" aria-label="View Showcase 4">
-        <div class="showcase-thumb">
-          <div class="thumb-grid" aria-hidden="true"></div>
-          <div class="thumb-crosshair" aria-hidden="true"></div>
-          <div class="showcase-thumb-placeholder">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" opacity="0.35"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
-            <img src="assets/images/showcase-4-thumb.jpg" alt="Showcase 4 thumbnail" />
-          </div>
-        </div>
-        <div class="showcase-body">
-          <div class="showcase-category">Other Course / Activity · Showcase 04</div>
-          <!-- PLACEHOLDER: Replace {{SHOWCASE_4}} -->
-          <div class="showcase-title">Research Poster</div>
-          <div class="showcase-desc">A research poster from ASTRO Lab that condenses a hardware-in-the-loop light-curve project into a clear visual communication format.</div>
-          <div class="showcase-footer">
-            <span class="showcase-tag">Communication</span>
-            <svg class="showcase-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div class="section-divider" aria-hidden="true"></div>
-
-<!-- ============================================================
-     REFLECTION PREVIEW
-     ============================================================ -->
-<section id="reflection">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-eyebrow">
-        <span class="section-index">06 /</span>
-        <span class="section-label">ENG2003 · Communication Growth</span>
-      </div>
-      <h2 class="section-title">Reflection</h2>
-    </div>
-
-    <div class="reflection-preview reveal">
-      <div class="reflection-label">Reflection Preview</div>
-      <!-- PLACEHOLDER: Replace this quote with 1–2 sentences from your actual reflection -->
-      <p class="reflection-quote">
-        "ENG2003 showed me that technical communication is not separate from engineering work. It is the discipline that makes analysis usable, decisions defensible, and collaboration possible."
-      </p>
-      <a href="pages/reflection.html" class="btn btn-outline">Read Full Reflection</a>
-    </div>
-  </div>
-</section>
-
-<div class="section-divider" aria-hidden="true"></div>
-'''
-
-<!-- ============================================================
-     PROFESSIONAL LINKS
-     ============================================================ -->
-<section id="connect">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-eyebrow">
-        <span class="section-index">07 /</span>
-        <span class="section-label">Find Me Online</span>
-      </div>
-      <h2 class="section-title">Connect</h2>
-    </div>
-
-    <div class="links-grid">
-
-      <!-- PLACEHOLDER: Replace {{LINKEDIN_URL}} -->
-      <a href="https://www.linkedin.com/in/kartikjassal/" target="_blank" rel="noopener" class="link-card reveal" aria-label="LinkedIn profile">
-        <div class="link-card-icon" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-        </div>
-        <div>
-          <div class="link-card-label">LinkedIn</div>
-          <div class="link-card-sub">Professional Profile</div>
-        </div>
-      </a>
-
-      <!-- PLACEHOLDER: Replace {{GITHUB_URL}} -->
-      <a href="https://github.com/jazzhatcoder" target="_blank" rel="noopener" class="link-card reveal" aria-label="GitHub">
-        <div class="link-card-icon" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-        </div>
-        <div>
-          <div class="link-card-label">GitHub</div>
-          <div class="link-card-sub">Code &amp; Projects</div>
-        </div>
-      </a>
-
-      <!-- PLACEHOLDER: Replace {{EMAIL}} -->
-      <a href="mailto:kartikj@my.yorku.ca" class="link-card reveal" aria-label="Send email">
-        <div class="link-card-icon" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </div>
-        <div>
-          <div class="link-card-label">Email</div>
-          <!-- PLACEHOLDER: Replace {{EMAIL}} in sub-label too -->
-          <div class="link-card-sub">kartikj@my.yorku.ca</div>
-        </div>
-      </a>
-
-      <!-- PLACEHOLDER: Replace {{RESUME_URL}} -->
-      <a href="https://drive.google.com/file/d/17bOKMBIG_i7pZanthaqwrjrVUTMx58RQ/view?usp=drive_link" target="_blank" rel="noopener" class="link-card reveal" aria-label="Download resume">
-        <div class="link-card-icon" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        </div>
-        <div>
-          <div class="link-card-label">Resume</div>
-          <div class="link-card-sub">Download PDF</div>
-        </div>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     FOOTER
-     ============================================================ -->
-<footer role="contentinfo">
-  <div class="container footer-inner">
-    <!-- PLACEHOLDER: Replace {{INITIALS}} -->
-    <div class="footer-logo">KJ<span>.</span></div>
-
-    <nav class="footer-links" aria-label="Footer navigation">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#showcase">Showcase</a>
-      <a href="pages/reflection.html">Reflection</a>
-      
-      <a href="https://www.linkedin.com/in/kartikjassal/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="mailto:kartikj@my.yorku.ca">Email</a>
-    </nav>
-
-    <div class="footer-social">
-      <a href="https://www.linkedin.com/in/kartikjassal/" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-      </a>
-      <a href="https://github.com/jazzhatcoder" target="_blank" rel="noopener" aria-label="GitHub">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-      </a>
-      <a href="mailto:kartikj@my.yorku.ca" aria-label="Email">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      </a>
-    </div>
-
-    <!-- PLACEHOLDER: Update {{FULL_NAME}} -->
-    <p class="footer-copy">© 2026 Kartik Jassal · Engineered for the frontier.</p>
-  </div>
-</footer>
-
-<script src="js/main.js"></script>
+  </footer>
+  <script src="js/main.js"></script>
 </body>
 </html>

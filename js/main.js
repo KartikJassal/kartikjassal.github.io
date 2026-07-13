@@ -21,6 +21,7 @@
 (function initStarfield() {
   const canvas = document.getElementById('starfield');
   if (!canvas) return;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const ctx = canvas.getContext('2d');
   let W, H, stars;
 
@@ -69,7 +70,7 @@
       }
       ctx.fill();
     });
-    requestAnimationFrame(draw);
+    if (!reducedMotion) requestAnimationFrame(draw);
   }
 
   resize();
@@ -321,3 +322,10 @@ document.querySelectorAll('[role="button"]').forEach(el => {
     }
   });
 });
+
+// Keep the rubric-required identity and update date consistent on every page.
+(function standardizePortfolioFooter() {
+  const copy = document.querySelector('.footer-copy');
+  if (!copy) return;
+  copy.textContent = '© 2026 Kartik Jassal · kartikj@my.yorku.ca · Last updated: July 13, 2026';
+})();
