@@ -138,12 +138,12 @@ body::after {
 /* Optional ambient background motion. Toggle it with animateBackground in
    js/main.js; the static star map and atmosphere remain when disabled. */
 html.background-animation-enabled body::before {
-  animation: atmosphere-breathe 18s ease-in-out infinite alternate;
+  animation: atmosphere-breathe 10s ease-in-out infinite alternate;
 }
 
 html.background-animation-enabled #orbital-overlay svg {
   transform-origin: center;
-  animation: orbital-map-drift 38s ease-in-out infinite alternate;
+  animation: orbital-map-drift 18s ease-in-out infinite alternate;
 }
 
 html.background-animation-enabled #orbital-overlay::before {
@@ -153,10 +153,24 @@ html.background-animation-enabled #orbital-overlay::before {
   left: -45%;
   width: 42%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0, 200, 232, 0.28), transparent);
-  box-shadow: 0 0 18px rgba(0, 200, 232, 0.12);
+  background: linear-gradient(90deg, transparent, rgba(0, 200, 232, 0.52), transparent);
+  box-shadow: 0 0 22px rgba(0, 200, 232, 0.22);
   transform: rotate(-12deg);
-  animation: telemetry-sweep 20s linear infinite;
+  animation: telemetry-sweep 10s linear infinite;
+}
+
+html.background-animation-enabled #orbital-overlay::after {
+  content: '';
+  position: absolute;
+  width: 34vmax;
+  height: 34vmax;
+  left: -8vmax;
+  top: 28%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(0, 200, 232, 0.16) 0%, rgba(0, 92, 140, 0.08) 34%, transparent 70%);
+  filter: blur(10px);
+  animation: ambient-orb 14s ease-in-out infinite alternate;
 }
 
 html.background-animation-disabled .orbital-ring {
@@ -164,20 +178,26 @@ html.background-animation-disabled .orbital-ring {
 }
 
 @keyframes atmosphere-breathe {
-  from { opacity: 0.72; transform: scale(1); }
-  to { opacity: 1; transform: scale(1.045); }
+  from { opacity: 0.62; transform: scale(1); }
+  to { opacity: 1; transform: scale(1.085); }
 }
 
 @keyframes orbital-map-drift {
-  from { transform: translate3d(-0.8%, -0.5%, 0) scale(1.01) rotate(-0.25deg); opacity: 0.78; }
-  to { transform: translate3d(0.9%, 0.7%, 0) scale(1.035) rotate(0.35deg); opacity: 1; }
+  from { transform: translate3d(-2%, -1.2%, 0) scale(1.01) rotate(-0.7deg); opacity: 0.7; }
+  to { transform: translate3d(2.2%, 1.6%, 0) scale(1.06) rotate(0.9deg); opacity: 1; }
 }
 
 @keyframes telemetry-sweep {
-  0%, 72% { transform: translate3d(0, 0, 0) rotate(-12deg); opacity: 0; }
-  76% { opacity: 0.7; }
-  94% { opacity: 0.7; }
+  0% { transform: translate3d(0, 0, 0) rotate(-12deg); opacity: 0; }
+  8% { opacity: 0.85; }
+  58% { opacity: 0.85; }
+  68% { transform: translate3d(350vw, 62vh, 0) rotate(-12deg); opacity: 0; }
   100% { transform: translate3d(350vw, 62vh, 0) rotate(-12deg); opacity: 0; }
+}
+
+@keyframes ambient-orb {
+  from { transform: translate3d(0, -8%, 0) scale(0.86); opacity: 0.45; }
+  to { transform: translate3d(72vw, 14%, 0) scale(1.2); opacity: 0.9; }
 }
 
 /* ============================================================
@@ -1974,5 +1994,23 @@ a.exp-item { display: block; }
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+  /* An explicit respectReducedMotion:false setting re-enables only the
+     decorative background layers, not the page's content transitions. */
+  html.background-animation-enabled body::before {
+    animation-duration: 10s !important;
+    animation-iteration-count: infinite !important;
+  }
+  html.background-animation-enabled #orbital-overlay svg {
+    animation-duration: 18s !important;
+    animation-iteration-count: infinite !important;
+  }
+  html.background-animation-enabled #orbital-overlay::before {
+    animation-duration: 10s !important;
+    animation-iteration-count: infinite !important;
+  }
+  html.background-animation-enabled #orbital-overlay::after {
+    animation-duration: 14s !important;
+    animation-iteration-count: infinite !important;
   }
 }

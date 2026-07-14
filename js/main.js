@@ -7,17 +7,23 @@
 // ============================================================
 // SITE OPTIONS
 // Set animateBackground to false to keep the background artwork static.
-// Visitors who enable reduced motion in their operating system also receive
-// the static version automatically.
+// Set respectReducedMotion to true to disable background motion automatically
+// when the visitor enables reduced motion in their operating system.
 // ============================================================
 const PORTFOLIO_OPTIONS = {
   animateBackground: true,
+  respectReducedMotion: false,
 };
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const backgroundAnimationEnabled = PORTFOLIO_OPTIONS.animateBackground && !prefersReducedMotion;
+const motionBlockedByPreference = PORTFOLIO_OPTIONS.respectReducedMotion && prefersReducedMotion;
+const backgroundAnimationEnabled = PORTFOLIO_OPTIONS.animateBackground && !motionBlockedByPreference;
+const backgroundAnimationStatus = backgroundAnimationEnabled
+  ? 'enabled'
+  : motionBlockedByPreference ? 'reduced-motion' : 'disabled';
 
 window.PORTFOLIO_OPTIONS = PORTFOLIO_OPTIONS;
+document.documentElement.dataset.backgroundAnimation = backgroundAnimationStatus;
 document.documentElement.classList.toggle('background-animation-enabled', backgroundAnimationEnabled);
 document.documentElement.classList.toggle('background-animation-disabled', !backgroundAnimationEnabled);
 
@@ -56,8 +62,8 @@ document.documentElement.classList.toggle('background-animation-disabled', !back
       a: Math.random() * 0.5 + 0.1,
       speed: Math.random() * 0.004 + 0.001,
       phase: Math.random() * Math.PI * 2,
-      dx: Math.random() * 0.018 + 0.004,
-      dy: Math.random() * 0.009 + 0.002,
+      dx: Math.random() * 0.045 + 0.012,
+      dy: Math.random() * 0.022 + 0.005,
       bright: false,
     }));
     // Accent stars — larger, slightly colored
@@ -68,16 +74,17 @@ document.documentElement.classList.toggle('background-animation-disabled', !back
       a: Math.random() * 0.7 + 0.3,
       speed: Math.random() * 0.002 + 0.0005,
       phase: Math.random() * Math.PI * 2,
-      dx: Math.random() * 0.012 + 0.003,
-      dy: Math.random() * 0.006 + 0.001,
+      dx: Math.random() * 0.032 + 0.008,
+      dy: Math.random() * 0.016 + 0.004,
       bright: true,
     }));
     stars = [...field, ...bright];
 
     // Sparse telemetry-like trails that cross the sky at long intervals.
     signalTrails = [
-      { y: 0.22, duration: 16, offset: 0, color: '0, 200, 232' },
-      { y: 0.68, duration: 23, offset: 9, color: '232, 160, 32' },
+      { y: 0.18, duration: 8, offset: 0, color: '0, 200, 232' },
+      { y: 0.48, duration: 11, offset: 3, color: '180, 220, 255' },
+      { y: 0.72, duration: 13, offset: 7, color: '232, 160, 32' },
     ];
   }
 
@@ -106,22 +113,22 @@ document.documentElement.classList.toggle('background-animation-disabled', !back
       signalTrails.forEach(trail => {
         const phase = ((now + trail.offset) % trail.duration) / trail.duration;
         // The trail is visible for only a short portion of each cycle.
-        if (phase > 0.22) return;
-        const progress = phase / 0.22;
+        if (phase > 0.42) return;
+        const progress = phase / 0.42;
         const x = -140 + progress * (W + 280);
         const y = H * trail.y + progress * 52;
         const gradient = ctx.createLinearGradient(x - 120, y - 24, x, y);
         gradient.addColorStop(0, `rgba(${trail.color}, 0)`);
-        gradient.addColorStop(1, `rgba(${trail.color}, 0.32)`);
+        gradient.addColorStop(1, `rgba(${trail.color}, 0.58)`);
         ctx.beginPath();
         ctx.moveTo(x - 120, y - 24);
         ctx.lineTo(x, y);
         ctx.strokeStyle = gradient;
-        ctx.lineWidth = 1;
+        ctx.lineWidth = 1.35;
         ctx.stroke();
         ctx.beginPath();
-        ctx.arc(x, y, 1.8, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${trail.color}, 0.7)`;
+        ctx.arc(x, y, 2.4, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${trail.color}, 0.9)`;
         ctx.fill();
       });
 
