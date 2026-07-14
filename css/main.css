@@ -135,6 +135,51 @@ body::after {
   overflow: hidden;
 }
 
+/* Optional ambient background motion. Toggle it with animateBackground in
+   js/main.js; the static star map and atmosphere remain when disabled. */
+html.background-animation-enabled body::before {
+  animation: atmosphere-breathe 18s ease-in-out infinite alternate;
+}
+
+html.background-animation-enabled #orbital-overlay svg {
+  transform-origin: center;
+  animation: orbital-map-drift 38s ease-in-out infinite alternate;
+}
+
+html.background-animation-enabled #orbital-overlay::before {
+  content: '';
+  position: absolute;
+  top: 18%;
+  left: -45%;
+  width: 42%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 200, 232, 0.28), transparent);
+  box-shadow: 0 0 18px rgba(0, 200, 232, 0.12);
+  transform: rotate(-12deg);
+  animation: telemetry-sweep 20s linear infinite;
+}
+
+html.background-animation-disabled .orbital-ring {
+  animation: none;
+}
+
+@keyframes atmosphere-breathe {
+  from { opacity: 0.72; transform: scale(1); }
+  to { opacity: 1; transform: scale(1.045); }
+}
+
+@keyframes orbital-map-drift {
+  from { transform: translate3d(-0.8%, -0.5%, 0) scale(1.01) rotate(-0.25deg); opacity: 0.78; }
+  to { transform: translate3d(0.9%, 0.7%, 0) scale(1.035) rotate(0.35deg); opacity: 1; }
+}
+
+@keyframes telemetry-sweep {
+  0%, 72% { transform: translate3d(0, 0, 0) rotate(-12deg); opacity: 0; }
+  76% { opacity: 0.7; }
+  94% { opacity: 0.7; }
+  100% { transform: translate3d(350vw, 62vh, 0) rotate(-12deg); opacity: 0; }
+}
+
 /* ============================================================
    LAYOUT
    ============================================================ */

@@ -4,6 +4,23 @@
 
 'use strict';
 
+// ============================================================
+// SITE OPTIONS
+// Set animateBackground to false to keep the background artwork static.
+// Visitors who enable reduced motion in their operating system also receive
+// the static version automatically.
+// ============================================================
+const PORTFOLIO_OPTIONS = {
+  animateBackground: true,
+};
+
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const backgroundAnimationEnabled = PORTFOLIO_OPTIONS.animateBackground && !prefersReducedMotion;
+
+window.PORTFOLIO_OPTIONS = PORTFOLIO_OPTIONS;
+document.documentElement.classList.toggle('background-animation-enabled', backgroundAnimationEnabled);
+document.documentElement.classList.toggle('background-animation-disabled', !backgroundAnimationEnabled);
+
 // Ensure directory URLs end with a trailing slash so relative links resolve
 // correctly on GitHub Pages project sites (e.g., /RepoName/ not /RepoName).
 (function ensureTrailingSlashForDirectoryUrls() {
@@ -21,9 +38,8 @@
 (function initStarfield() {
   const canvas = document.getElementById('starfield');
   if (!canvas) return;
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const ctx = canvas.getContext('2d');
-  let W, H, stars;
+  let W, H, stars, signalTrails;
 
   function resize() {
     W = canvas.width  = window.innerWidth;
@@ -40,6 +56,8 @@
       a: Math.random() * 0.5 + 0.1,
       speed: Math.random() * 0.004 + 0.001,
       phase: Math.random() * Math.PI * 2,
+      dx: Math.random() * 0.018 + 0.004,
+      dy: Math.random() * 0.009 + 0.002,
       bright: false,
     }));
     // Accent stars — larger, slightly colored
@@ -50,9 +68,17 @@
       a: Math.random() * 0.7 + 0.3,
       speed: Math.random() * 0.002 + 0.0005,
       phase: Math.random() * Math.PI * 2,
+      dx: Math.random() * 0.012 + 0.003,
+      dy: Math.random() * 0.006 + 0.001,
       bright: true,
     }));
     stars = [...field, ...bright];
+
+    // Sparse telemetry-like trails that cross the sky at long intervals.
+    signalTrails = [
+      { y: 0.22, duration: 16, offset: 0, color: '0, 200, 232' },
+      { y: 0.68, duration: 23, offset: 9, color: '232, 160, 32' },
+    ];
   }
 
   function draw() {
@@ -69,8 +95,38 @@
         ctx.fillStyle = `rgba(160, 200, 240, ${alpha * 0.7})`;
       }
       ctx.fill();
+
+      if (backgroundAnimationEnabled) {
+        s.x = (s.x + s.dx) % W;
+        s.y = (s.y + s.dy) % H;
+      }
     });
-    if (!reducedMotion) requestAnimationFrame(draw);
+
+    if (backgroundAnimationEnabled) {
+      signalTrails.forEach(trail => {
+        const phase = ((now + trail.offset) % trail.duration) / trail.duration;
+        // The trail is visible for only a short portion of each cycle.
+        if (phase > 0.22) return;
+        const progress = phase / 0.22;
+        const x = -140 + progress * (W + 280);
+        const y = H * trail.y + progress * 52;
+        const gradient = ctx.createLinearGradient(x - 120, y - 24, x, y);
+        gradient.addColorStop(0, `rgba(${trail.color}, 0)`);
+        gradient.addColorStop(1, `rgba(${trail.color}, 0.32)`);
+        ctx.beginPath();
+        ctx.moveTo(x - 120, y - 24);
+        ctx.lineTo(x, y);
+        ctx.strokeStyle = gradient;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(x, y, 1.8, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${trail.color}, 0.7)`;
+        ctx.fill();
+      });
+
+      requestAnimationFrame(draw);
+    }
   }
 
   resize();
