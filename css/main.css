@@ -15,10 +15,10 @@
   --bg-card-hover: rgba(8, 16, 30, 0.96);
 
   /* Text hierarchy */
-  --text:          #dce8f0;
-  --text-mid:      #8fa8be;
-  --text-muted:    #526a82;
-  --text-dim:      #2a3d52;
+  --text:          #eef7fb;
+  --text-mid:      #c1d1dc;
+  --text-muted:    #9db2c3;
+  --text-dim:      #72889b;
 
   /* Dual-temperature accent system */
   --cyan:          #00c8e8;
@@ -71,8 +71,8 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
-  font-size: 17px;
-  font-weight: 300;
+  font-size: 18px;
+  font-weight: 400;
   line-height: 1.7;
   overflow-x: hidden;
   cursor: crosshair;
@@ -1751,6 +1751,135 @@ a.exp-item { display: block; }
 .detail-content h2::before { content: '>' !important; }
 .detail-content ul li::before,
 .detail-list li::before { content: '-' !important; }
+
+/* ============================================================
+   READABILITY AND CONTRAST PASS
+   All text tokens meet at least 4.5:1 contrast on the base background.
+   ============================================================ */
+.header-nav a,
+.header-linkedin,
+.btn { font-size: 13px; }
+
+.section-index,
+.section-label,
+.hero-system-id,
+.card-meta,
+.trait-tag,
+.about-stat .stat-label,
+.exp-date,
+.showcase-category,
+.showcase-tag,
+.reflection-label,
+.footer-links a,
+.footer-copy,
+.page-breadcrumb,
+.sidebar-card-label,
+.placeholder-label,
+.placeholder-note,
+.goal-kicker,
+.portfolio-index,
+.framework-step > span,
+.artifact-source,
+.competencies span,
+.text-link {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.hero-intro,
+.about-text p,
+.card-desc,
+.exp-desc,
+.achievement-desc,
+.showcase-desc,
+.page-intro,
+.detail-content p,
+.detail-content ul li,
+.reflection-body p,
+.career-summary > p,
+.clean-list li,
+.portfolio-card > p,
+.artifact-content > p,
+.confidentiality-note {
+  font-weight: 400;
+}
+
+.hero-intro,
+.about-text p,
+.page-intro { font-size: 18px; }
+
+.detail-content p,
+.detail-content ul li { font-size: 17px; }
+
+.reflection-quote { font-weight: 400; }
+.reflection-pull-quote::before { font-size: 12px; opacity: 1; }
+
+.card-desc,
+.exp-desc,
+.showcase-desc,
+.career-summary > p,
+.clean-list li,
+.portfolio-card > p,
+.artifact-content > p,
+.confidentiality-note {
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.toc-card small,
+.framework-step p,
+.credential-links a,
+.competency-rationale,
+.link-card-sub {
+  font-size: 14px !important;
+  line-height: 1.65;
+}
+
+.exp-org,
+.sidebar-card-value { font-size: 14px; }
+
+.page-subtitle { font-size: 13px; }
+.detail-placeholder-box { font-size: 13px; line-height: 1.6; }
+
+/* Detail pages contain legacy embedded styles; these overrides keep their
+   navigation, metadata, tables, and reflections readable as well. */
+.r-block p {
+  color: var(--text-muted) !important;
+  font-size: 17px !important;
+  font-weight: 400 !important;
+  line-height: 1.8 !important;
+}
+.sc-nav a,
+.r-label,
+.doc-frame-bar span,
+.skill-pill,
+.slide-num,
+.img-placeholder,
+.course-table th,
+.course-table td:first-child,
+.tags-row span {
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+}
+.slide-label { font-size: 14px !important; line-height: 1.5 !important; }
+.course-table td { font-size: 15px; line-height: 1.6; }
+.doc-frame-body p[style*="font-size:11px"],
+.sidebar-card-value span[style*="font-size:11px"] {
+  color: var(--text-muted) !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+}
+
+@media (max-width: 768px) {
+  body { font-size: 17px; }
+  .section-title { line-height: 1.05; }
+  .hero-intro,
+  .about-text p,
+  .page-intro,
+  .detail-content p,
+  .reflection-body p { font-size: 17px; line-height: 1.75; }
+}
 
 /* ============================================================
    RESPONSIVE
