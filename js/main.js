@@ -315,24 +315,47 @@ document.documentElement.classList.toggle('background-animation-disabled', !back
 // ACTIVE NAV HIGHLIGHT on scroll
 // ============================================================
 (function initActiveNav() {
-  const sections = document.querySelectorAll('section[id]');
-  const links = document.querySelectorAll('.header-nav a');
+  const sections = [...document.querySelectorAll('section[id]')];
+  const links = [...document.querySelectorAll('.header-nav a[href*="#"]')];
   if (!sections.length || !links.length) return;
 
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        const id = e.target.id;
-        links.forEach(a => {
-          const href = a.getAttribute('href') || '';
-          const match = href === `#${id}` || href.endsWith(`#${id}`);
-          a.classList.toggle('is-active', match);
-        });
-      }
-    });
-  }, { threshold: 0.4 });
+  let ticking = false;
 
-  sections.forEach(s => io.observe(s));
+  function updateActiveNav() {
+    // Use a reading line below the fixed header instead of a percentage of
+    // each section. Percentage-based observers fail when a section is taller
+    // than the viewport (such as Career).
+    const header = document.getElementById('site-header');
+    const headerHeight = header ? header.offsetHeight : 0;
+    const readingLine = window.scrollY + headerHeight + Math.min(window.innerHeight * 0.24, 180);
+
+    let currentSection = null;
+    sections.forEach(section => {
+      const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+      if (sectionTop <= readingLine) currentSection = section;
+    });
+
+    links.forEach(link => {
+      const href = link.getAttribute('href') || '';
+      const targetId = href.includes('#') ? href.split('#').pop() : '';
+      const isActive = Boolean(currentSection && targetId === currentSection.id);
+      link.classList.toggle('is-active', isActive);
+      if (isActive) link.setAttribute('aria-current', 'location');
+      else if (link.getAttribute('aria-current') === 'location') link.removeAttribute('aria-current');
+    });
+
+    ticking = false;
+  }
+
+  function scheduleUpdate() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(updateActiveNav);
+  }
+
+  updateActiveNav();
+  window.addEventListener('scroll', scheduleUpdate, { passive: true });
+  window.addEventListener('resize', scheduleUpdate, { passive: true });
 })();
 
 
