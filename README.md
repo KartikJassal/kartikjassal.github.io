@@ -2,7 +2,7 @@
 
 A responsive professional ePortfolio for COOP 2100 at York University's Lassonde School of Engineering. The site documents academic and professional growth through career evidence, goals, reflections, engineering artifacts, and explicit Lassonde Undergraduate Competency connections.
 
-Live site: https://jazzhatcoder.github.io/
+Live site: https://kartikjassal.github.io/
 
 ## Rubric structure
 

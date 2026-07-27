@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Kartik Jassal</title>
+  <meta name="description" content="An expanded about page for Kartik Jassal's Space Engineering ePortfolio, including background, interests, working style, and goals." />
+  <link rel="stylesheet" href="../css/main.css?v=20260714-3" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="96x96" href="../assets/favicon/favicon-96x96.png" />
+  <link rel="icon" href="../assets/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="../assets/favicon/site.webmanifest" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div id="orbital-overlay" aria-hidden="true"></div>
+
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
+    <a href="../index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="../index.html#career">Career</a>
+    <a href="../index.html#goals">Goals &amp; Portfolios</a>
+    <a href="../index.html#reflections">Reflections</a>
+    <a href="../index.html#projects">Course Projects</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+
+  <header id="site-header" role="banner">
+    <div class="header-inner">
+      <a href="../index.html" class="header-initials" aria-label="Kartik Jassal ePortfolio home">KJ<span class="accent">.</span></a>
+      <nav class="header-nav" aria-label="Primary navigation">
+        <a href="about.html" aria-current="page">About</a>
+        <a href="../index.html#career">Career</a>
+        <a href="../index.html#goals">Goals</a>
+        <a href="../index.html#reflections">Reflections</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#contact">Connect</a>
+      </nav>
+      <a href="https://www.linkedin.com/in/kartikjassal/" target="_blank" rel="noopener" class="header-linkedin" aria-label="Kartik Jassal on LinkedIn">LinkedIn</a>
+      <button id="hamburger" class="hamburger" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero" aria-labelledby="about-page-title">
+      <div class="container">
+        <div class="page-breadcrumb">
+          <a href="../index.html">Home</a>
+          <span>›</span>
+          <span>About</span>
+        </div>
+        <p class="page-subtitle">Personal Profile · Space Engineering Student</p>
+        <h1 id="about-page-title" class="page-title">About Me</h1>
+        <p class="page-intro">I am a Space Engineering student at York University focused on space robotics, systems thinking, and the technical communication needed to contribute to multidisciplinary missions. This page expands on my background, what I value, and the direction I am building toward.</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="detail-layout">
+        <article class="detail-content">
+          <h2>Profile</h2>
+          <p>I am pursuing a Specialized Honours Bachelor of Engineering in Space Engineering at the Lassonde School of Engineering, with an expected graduation date of April 2029. My academic path combines robotics, systems engineering, and human spaceflight because I want to work on missions that are both technically ambitious and operationally useful.</p>
+          <p>I am especially interested in on-orbit servicing, because it connects mechanical design, autonomy, sensing, and mission planning in a way that directly supports longer mission lifetimes and more sustainable space operations. That mix of technical depth and practical impact is what draws me to the field.</p>
+
+          <h2>What I Enjoy</h2>
+          <p>Outside engineering, I enjoy rock climbing and logic puzzles. Both reward patience, deliberate practice, and the willingness to work through a problem step by step instead of rushing to a superficial answer. Those habits carry into my academic and project work.</p>
+          <ul>
+            <li>Space robotics and autonomous systems</li>
+            <li>On-orbit servicing and sustainable space operations</li>
+            <li>Technical communication and documentation</li>
+            <li>Collaborative prototyping and design iteration</li>
+          </ul>
+
+          <h2>How I Work</h2>
+          <p>I work best when a problem is broken into clear systems, constraints, and deliverables. In practice, that means I like to define the objective, identify the assumptions, test ideas early, and communicate the result clearly so the next person can build on it. I try to bring the same mindset to research, student leadership, and coursework.</p>
+          <p>That approach has helped me develop confidence in both technical and interpersonal settings. I am still learning, but I am increasingly comfortable moving between design work, implementation, and explanation.</p>
+
+          <div class="inline-actions">
+            <a class="btn btn-primary" href="../index.html#contact">Contact Me</a>
+            <a class="btn btn-outline" href="../index.html#career">View Career Record</a>
+          </div>
+        </article>
+
+        <aside class="detail-sidebar" aria-label="About page summary">
+          <div class="sidebar-card">
+            <div class="sidebar-card-label">Program</div>
+            <div class="sidebar-card-value">B.Eng. in Space Engineering</div>
+          </div>
+          <div class="sidebar-card">
+            <div class="sidebar-card-label">Focus</div>
+            <div class="sidebar-card-value">Space robotics, systems engineering, and on-orbit servicing</div>
+          </div>
+          <div class="sidebar-card">
+            <div class="sidebar-card-label">Tools</div>
+            <div class="sidebar-card-value" style="font-size:14px;line-height:2;font-family:var(--font-mono)">
+              Python<br />
+              MATLAB<br />
+              SolidWorks<br />
+              CAD and prototyping
+            </div>
+          </div>
+          <div class="sidebar-card">
+            <div class="sidebar-card-label">Current Direction</div>
+            <div class="sidebar-card-value">Building the technical judgement and communication skills needed for multidisciplinary space missions.</div>
+          </div>
+
+          <a href="../index.html" class="btn btn-ghost" style="text-align:center;justify-content:center">
+            ← Back to Home
+          </a>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-logo">KJ<span>.</span></div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="../index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="../index.html#career">Career</a>
+        <a href="../index.html#goals">Goals</a>
+        <a href="../index.html#reflections">Reflections</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="mailto:kartikj@my.yorku.ca">Email</a>
+      </nav>
+      <p class="footer-copy">© 2026 Kartik Jassal · kartikj@my.yorku.ca · Last updated: July 26, 2026</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js?v=20260714-3"></script>
+</body>
+</html>
